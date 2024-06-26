@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         binding?.btnRed?.setOnClickListener{
             activityInterface.changeColor(1)
         }
+        binding?.btnBlue?.setOnClickListener{
+            activityInterface.changeColor(2)
+        }
+        binding?.btnGreen?.setOnClickListener{
+            activityInterface.changeColor(3)
+        }
     }
     fun btnIncrement() {
         number++

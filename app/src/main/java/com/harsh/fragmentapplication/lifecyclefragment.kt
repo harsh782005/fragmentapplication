@@ -27,11 +27,13 @@ class lifecyclefragment : Fragment(), ActivityInterface {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var mainActivity: MainActivity
-    var btnIncrement : Button? = null
-    var btnDecrement : Button? = null
-    var btnResult : Button? = null
-    var btnRed : Button?=null
-   var llFragment : LinearLayout? = null
+    var btnIncrement: Button? = null
+    var btnDecrement: Button? = null
+    var btnResult: Button? = null
+    var btnRed: Button? = null
+    var btnBlue: Button? = null
+    var btnGreen: Button? = null
+    var llFragment: LinearLayout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivity = activity as MainActivity
@@ -57,7 +59,9 @@ class lifecyclefragment : Fragment(), ActivityInterface {
         btnDecrement = view.findViewById(R.id.btnDecrement)
         btnResult = view.findViewById(R.id.btnResult)
         btnRed = view.findViewById(R.id.btnRed)
-        llFragment=view.findViewById(R.id.llFragment)
+        btnGreen = view.findViewById(R.id.btnGreen)
+        btnBlue = view.findViewById(R.id.btnBlue)
+        llFragment = view.findViewById(R.id.llFragment)
         btnIncrement?.setOnClickListener {
             mainActivity.btnIncrement()
         }
@@ -141,8 +145,29 @@ class lifecyclefragment : Fragment(), ActivityInterface {
     }
 
     override fun changeColor(number: Int) {
-    when(number){
-        1-> llFragment?.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.red))
-    }
+        when (number) {
+            1 -> llFragment?.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.red
+                )
+            )
+        }
+        when (number) {
+            2 -> llFragment?.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.blue
+                )
+            )
+        }
+        when (number) {
+            3 -> llFragment?.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.green
+                )
+            )
+        }
     }
 }

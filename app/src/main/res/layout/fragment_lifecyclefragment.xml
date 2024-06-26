@@ -19,8 +19,7 @@
         android:text="@string/result"
         android:textSize="20sp"
         android:textStyle="bold|italic"
-        android:id="@+id/btnResult"
-       />
+        android:id="@+id/btnResult" />
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
